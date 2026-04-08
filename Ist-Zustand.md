@@ -1,5 +1,4 @@
 # Ist-Zustand
-repo4copilot-test-team-abc-baren created by GitHub Classroom
 
 Ist-Zustand:
 Das bestehende Casino wird ausschließlich als physischer Standort betrieben und richtet sich an Kunden, die vor Ort spielen. Die Verwaltung und das Angebot sind auf den lokalen Einzugsbereich beschränkt.
