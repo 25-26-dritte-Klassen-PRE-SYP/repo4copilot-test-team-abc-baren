@@ -6,3 +6,4 @@ Das bestehende Casino wird ausschließlich als physischer Standort betrieben und
 
 Aktuelles Problem:
 Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Casino physisch besuchen können. Dadurch bleiben potenzielle Online-Zielgruppen ungenutzt, was zu geringerer Auslastung und weniger Umsatz führt.
+ 
