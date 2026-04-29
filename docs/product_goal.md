@@ -35,4 +35,16 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 - **Online-Verfügbarkeit** <br>
   Innerhalb von 3 Monaten soll eine mobil nutzbare Website oder App bereitgestellt werden.
 
+## UCD
+
+
+## DFD
+
+
+## Liste der Rollen
+
+
+## Liste der Systeme
+
+
 
