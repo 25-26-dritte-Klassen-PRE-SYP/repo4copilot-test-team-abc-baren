@@ -43,9 +43,10 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 ### Liste der Rollen
 - Kunde
-- 
+- Mitarbeiter
+- Admin
 
 ### Liste der Systeme
-
+- 
 
 
