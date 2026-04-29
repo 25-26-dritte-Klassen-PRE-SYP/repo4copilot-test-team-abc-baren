@@ -16,7 +16,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 # Soll-Zustand:
 
-# Ziele: 
+### Ziele: 
 1. Der Entwickler erstellt innerhalb von 6 Monaten eine benutzerfreundliche Website mit klarer Navigation, Kontaktformular und mindestens 5 Funktionen.
 2. Der Entwickler optimiert innerhalb von 9 Monaten digitale Prozesse, sodass die Bearbeitungszeit von Anfragen oder Bestellungen um 30 % reduziert wird.
    Der Entwickler implementiert innerhalb von 6 Monaten ein System, das Ladezeiten auf unter 2 Sekunden reduziert und mindestens 500 gleichzeitige Nutzer             unterstützt.
