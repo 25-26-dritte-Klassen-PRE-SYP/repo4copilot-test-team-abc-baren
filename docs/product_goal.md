@@ -36,6 +36,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
   Innerhalb von 3 Monaten soll eine mobil nutzbare Website oder App bereitgestellt werden.
 
 ### UCD
+<img width="1519" height="1159" alt="image" src="https://github.com/user-attachments/assets/090c8ef8-55d5-4398-bf2e-c06f5e1d687d" />
 
 
 ### DFD
