@@ -17,6 +17,11 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 # Soll-Zustand:
 
 # Ziele: 
+1. Der Entwickler erstellt innerhalb von 6 Monaten eine benutzerfreundliche Website mit klarer Navigation, Kontaktformular und mindestens 5 Funktionen zur            Kundengewinnung.
+2. Der Entwickler optimiert innerhalb von 9 Monaten digitale Prozesse, sodass die Bearbeitungszeit von Anfragen oder Bestellungen um 30 % reduziert wird.
+   Der Entwickler implementiert innerhalb von 6 Monaten ein System, das Ladezeiten auf unter 2 Sekunden reduziert und mindestens 500 gleichzeitige Nutzer             unterstützt.
+3. Der Entwickler entwickelt innerhalb von 12 Monaten eine skalierbare und mehrsprachige Plattform, die in mindestens 3 Regionen eingesetzt werden kann.
+4. Der Entwickler erstellt innerhalb von 6 Monaten eine mobil optimierte Website oder App, die auf mindestens 95 % aller gängigen Smartphones und Tablets             fehlerfrei funktioniert.
 5. Online-Verfügbarkeit:
    Innerhalb von 3 Monaten soll eine mobil nutzbare Website oder App bereitgestellt werden.
 
