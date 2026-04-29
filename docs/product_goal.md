@@ -39,6 +39,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 
 ### DFD
+<img width="575" height="548" alt="image" src="https://github.com/user-attachments/assets/0ef9ddf8-5a12-4aba-98c2-68083a16bea2" />
 
 
 ### Liste der Rollen
