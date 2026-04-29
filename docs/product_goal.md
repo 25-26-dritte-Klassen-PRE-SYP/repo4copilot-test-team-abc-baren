@@ -18,4 +18,5 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 1. mehr Kunden erreichen
 2. Gewinn steigern
 3. 24h Verfügbarkeit täglich
-4. 
+4. geografische Expansion
+5. Möglichkeit der mobilen Nutzung
