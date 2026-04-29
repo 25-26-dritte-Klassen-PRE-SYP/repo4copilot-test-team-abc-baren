@@ -17,10 +17,15 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 # Soll-Zustand:
 
 # Ziele: 
-1. Die Anzahl der Kunden soll innerhalb der nächsten 12 Monate um 30 % erhöht werden.
-2. Der monatliche Gewinn soll innerhalb eines Jahres um 20 % gesteigert werden.
-3. Es soll ein System eingeführt werden, das eine zu 99,9% (pro Jahr) funktionierende 24-Stunden pro Tag Verfügbarkeit ermöglicht.
-4. Das Unternehmen soll innerhalb der nächsten 6 Monate in mindestens zwei neue Länder expandieren.
-5. Innerhalb von 3 Monaten soll eine mobil nutzbare Website oder App bereitgestellt werden.
+1. mehr Kunden erreichen:
+  Die Anzahl der Kunden soll innerhalb der nächsten 12 Monate um 30 % erhöht werden.
+2. Gewinnsteigerung:
+  Der monatliche Gewinn soll innerhalb eines Jahres um 20 % gesteigert werden.
+3. 24/7 Verfügbarkeit online
+  Es soll ein System eingeführt werden, das eine zu 99,9% (pro Jahr) funktionierende 24-Stunden pro Tag Verfügbarkeit ermöglicht.
+4. Expansion:
+   Das Unternehmen soll innerhalb der nächsten 6 Monate in mindestens zwei neue Länder expandieren.
+5. Online-Verfügbarkeit:
+   Innerhalb von 3 Monaten soll eine mobil nutzbare Website oder App bereitgestellt werden.
 
 
