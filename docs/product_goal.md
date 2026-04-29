@@ -7,6 +7,7 @@ Aktuelles Problem:
 Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Casino physisch besuchen können. Dadurch bleiben potenzielle Online-Zielgruppen ungenutzt, was zu geringerer Auslastung und weniger Umsatz führt.
 
 # UCD:
+<img width="641" height="716" alt="image" src="https://github.com/user-attachments/assets/f26caa07-2696-4545-9e59-ad70b55979bd" />
 
 
 
