@@ -49,6 +49,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 - Admin
 
 ### Liste der Systeme
-- 
+- Casino-System
+- Zahlungssystem
 
 
