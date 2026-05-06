@@ -71,7 +71,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 - Sicherheit: Fähigkeit, unberechtigten Zugriff, sowohl versehentlich als auch vorsätzlich, auf Programme und Daten zu verhindern.
   - Ziel: Alle Userdaten werden sicher gespeichert, damit kein Sicherheitsrisiko entsteht.
-  - Messbarkeit: 100% der Passwörter sind vor unberechtigtem Zugriff geschützt.
+  - Messbarkeit: 100% der Passwörter und Zahlungsvorgänge sind vor unberechtigtem Zugriff geschützt.
 
 - Reife: Geringe Versagenshäufigkeit durch Fehlerzustände.
   - Ziel: Die Versagenshäufigkeit durch Fehler soll möglichst gering sein. 
