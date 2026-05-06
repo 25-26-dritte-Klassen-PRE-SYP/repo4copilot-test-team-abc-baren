@@ -67,7 +67,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 - Zeitverhalten: Antwort- und Verarbeitungszeiten sowie Durchsatz bei der Funktionsausführung.
   - Ziel: Ladezeiten von Funktionen sollen möglischst gering sein, um eine störungsfreie Benutzung des Systems zu ermöglichen.
-  - Messbarkeit: Kleine Funktionen werden in unter 5 Sekunden geladen und große Funktionen in unter 20 Sekunden.
+  - Messbarkeit: Auf lokalem Gerät werden Funktionen in unter 3 Sekunden geldaden.
 
 - Sicherheit: Fähigkeit, unberechtigten Zugriff, sowohl versehentlich als auch vorsätzlich, auf Programme und Daten zu verhindern.
   - Ziel: Alle Userdaten werden sicher gespeichert, damit kein Sicherheitsrisiko entsteht.
