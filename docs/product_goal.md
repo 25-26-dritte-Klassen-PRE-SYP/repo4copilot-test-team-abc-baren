@@ -63,7 +63,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 - Bedienbarkeit: Aufwand für den Benutzer, die Anwendung zu bedienen.
   - Ziel: Das System soll leicht bedienbar sein, damit auch neue Kunden das System schnell verstehen.
-  - Messbarkeit: 8 von 10 Testern, die der Kunde aussucht, bewerten die Bedienbarkeit bei einem Workshop mit "Sehr Gut".
+  - Messbarkeit: 8 von 10 Testern, die der Kunde aussucht, bewerten die Bedienbarkeit in einem Workshop mit "Sehr Gut".
 
 - Zeitverhalten: Antwort- und Verarbeitungszeiten sowie Durchsatz bei der Funktionsausführung.
   - Ziel: Ladezeiten von Funktionen sollen möglischst gering sein, um eine störungsfreie Benutzung des Systems zu ermöglichen.
