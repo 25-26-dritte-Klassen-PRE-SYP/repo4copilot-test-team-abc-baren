@@ -62,21 +62,21 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
   - Messbarkeit: 8 von 10 Testern, die der Kunde aussucht, bewerten die UI bei einem Workshop mit "Sehr Gut".
 
 - Bedienbarkeit
-- Ziel: Das System soll leicht bedienbar sein, damit auch neue Kunden das System schnell verstehen.
-- Messbarkeit: 8 von 10 Testern, die der Kunde aussucht, bewerten die Bedienbarkeit bei einem Workshop mit "Sehr Gut".
+  - Ziel: Das System soll leicht bedienbar sein, damit auch neue Kunden das System schnell verstehen.
+  - Messbarkeit: 8 von 10 Testern, die der Kunde aussucht, bewerten die Bedienbarkeit bei einem Workshop mit "Sehr Gut".
 
 - Zeitverhalten
-- Ziel: Ladezeiten von Funktionen sollen möglischst gering sein, um eine störungsfreie Benutzung des Systems zu ermöglichen.
-- Messbarkeit: Kleine Funktionen werden in unter 5 Sekunden geladen und große Funktionen in unter 20 Sekunden.
+  - Ziel: Ladezeiten von Funktionen sollen möglischst gering sein, um eine störungsfreie Benutzung des Systems zu ermöglichen.
+  - Messbarkeit: Kleine Funktionen werden in unter 5 Sekunden geladen und große Funktionen in unter 20 Sekunden.
 
 - Sicherheit
-- Ziel: Alle Userdaten werden sicher gespeichert, damit kein Sicherheitsrisiko entsteht.
-- Messbarkeit: 100% der Passwörter sind vor unberechtigtem Zugriff geschützt.
+  - Ziel: Alle Userdaten werden sicher gespeichert, damit kein Sicherheitsrisiko entsteht.
+  - Messbarkeit: 100% der Passwörter sind vor unberechtigtem Zugriff geschützt.
 
 - Reife
-- Ziel: Die Versagenshäufigkeit durch Fehler soll möglichst gering sein. 
-- Messbarkeit: Weniger als 1 kritischer Systemfehler pro Monat und mindestens 95 % fehlerfreie Systemstarts im Regelbetrieb.
+  - Ziel: Die Versagenshäufigkeit durch Fehler soll möglichst gering sein. 
+  - Messbarkeit: Weniger als 1 kritischer Systemfehler pro Monat und mindestens 95 % fehlerfreie Systemstarts im Regelbetrieb.
 
 - Wiederherstellbarkeit
-- Ziel: Nach einem kritischem Systemfehler dürfen keine Daten verloren gehen. 
-- Messbarkeit: 100% der Daten sind nach der Wiederherstellung wieder korrekt vorhanden. 
+  - Ziel: Nach einem kritischem Systemfehler dürfen keine Daten verloren gehen. 
+  - Messbarkeit: 100% der Daten sind nach der Wiederherstellung wieder korrekt vorhanden. 
