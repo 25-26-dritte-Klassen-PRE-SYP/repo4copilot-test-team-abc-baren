@@ -55,7 +55,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 ### NFA
 - Modifizierbarkeit: Aufwand zur Ausführung von Verbesserungen, zur Fehlerbeseitigung oder Anpassung an Umgebungsänderungen.
   - Ziel: Die Zeit für die Implementierung von neuen Funktionen soll möglichst gering sein
-  - Messbarkeit: Die Modifizierbarkeit wird daran gemessen, dass kleine Funktionen in unter 1 Arbeitstag und mittlere Erweiterungen in unter 3 Arbeitstagen ohne kritische Fehler umgesetzt werden können.
+  - Messbarkeit: Bei der Programmierung wird auf Programmierstandards geachtet um eine einfache Modifizierung zu ermöglichen.
 
 - Attraktivität: Anziehungskraft der Anwendung gegenüber dem Benutzer.
   - Ziel: Die UI soll möglichst attraktiv sein, um Kunden anzulocken und zu Käufen zu verleiten
