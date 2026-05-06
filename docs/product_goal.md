@@ -75,7 +75,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 - Reife: Geringe Versagenshäufigkeit durch Fehlerzustände.
   - Ziel: Die Versagenshäufigkeit durch Fehler soll möglichst gering sein. 
-  - Messbarkeit: Weniger als 1 kritischer Systemfehler pro Monat und mindestens 98 % fehlerfreie Systemstarts im Regelbetrieb.
+  - Messbarkeit: Weniger als 1 kritischer Systemfehler pro Monat und mindestens 97 % fehlerfreie Systemstarts im Regelbetrieb.
 
 - Wiederherstellbarkeit: Fähigkeit, bei einem Versagen das Leistungsniveau wiederherzustellen und die direkt betroffenen Daten wiederzugewinnen. Zu   berücksichtigen sind die dafür benötigte Zeit und der benötigte Aufwand.
   - Ziel: Nach einem kritischem Systemfehler dürfen keine Daten verloren gehen. 
