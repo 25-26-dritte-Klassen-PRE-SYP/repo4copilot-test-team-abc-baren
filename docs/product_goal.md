@@ -53,30 +53,30 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 - Zahlungssystem
 
 ### NFA
-- Modifizierbarkeit
+- Modifizierbarkeit: Aufwand zur Ausführung von Verbesserungen, zur Fehlerbeseitigung oder Anpassung an Umgebungsänderungen.
   - Ziel: Die Zeit für die Implementierung von neuen Funktionen soll möglichst gering sein
   - Messbarkeit: Die Modifizierbarkeit wird daran gemessen, dass kleine Funktionen in unter 1 Arbeitstag und mittlere Erweiterungen in unter 3 Arbeitstagen ohne kritische Fehler umgesetzt werden können.
 
-- Attraktivität
+- Attraktivität: Anziehungskraft der Anwendung gegenüber dem Benutzer.
   - Ziel: Die UI soll möglichst attraktiv sein, um Kunden anzulocken und zu Käufen zu verleiten
   - Messbarkeit: 8 von 10 Testern, die der Kunde aussucht, bewerten die UI bei einem Workshop mit "Sehr Gut".
 
-- Bedienbarkeit
+- Bedienbarkeit: Aufwand für den Benutzer, die Anwendung zu bedienen.
   - Ziel: Das System soll leicht bedienbar sein, damit auch neue Kunden das System schnell verstehen.
   - Messbarkeit: 8 von 10 Testern, die der Kunde aussucht, bewerten die Bedienbarkeit bei einem Workshop mit "Sehr Gut".
 
-- Zeitverhalten
+- Zeitverhalten: Antwort- und Verarbeitungszeiten sowie Durchsatz bei der Funktionsausführung.
   - Ziel: Ladezeiten von Funktionen sollen möglischst gering sein, um eine störungsfreie Benutzung des Systems zu ermöglichen.
   - Messbarkeit: Kleine Funktionen werden in unter 5 Sekunden geladen und große Funktionen in unter 20 Sekunden.
 
-- Sicherheit
+- Sicherheit: Fähigkeit, unberechtigten Zugriff, sowohl versehentlich als auch vorsätzlich, auf Programme und Daten zu verhindern.
   - Ziel: Alle Userdaten werden sicher gespeichert, damit kein Sicherheitsrisiko entsteht.
   - Messbarkeit: 100% der Passwörter sind vor unberechtigtem Zugriff geschützt.
 
-- Reife
+- Reife: Geringe Versagenshäufigkeit durch Fehlerzustände.
   - Ziel: Die Versagenshäufigkeit durch Fehler soll möglichst gering sein. 
   - Messbarkeit: Weniger als 1 kritischer Systemfehler pro Monat und mindestens 95 % fehlerfreie Systemstarts im Regelbetrieb.
 
-- Wiederherstellbarkeit
+- Wiederherstellbarkeit: Fähigkeit, bei einem Versagen das Leistungsniveau wiederherzustellen und die direkt betroffenen Daten wiederzugewinnen. Zu   berücksichtigen sind die dafür benötigte Zeit und der benötigte Aufwand.
   - Ziel: Nach einem kritischem Systemfehler dürfen keine Daten verloren gehen. 
   - Messbarkeit: 100% der Daten sind nach der Wiederherstellung wieder korrekt vorhanden. 
