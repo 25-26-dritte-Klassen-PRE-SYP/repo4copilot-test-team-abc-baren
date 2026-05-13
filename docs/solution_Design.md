@@ -28,7 +28,7 @@ Mitarbeiter können Kundendaten, Anfragen, Inhalte und Systemprozesse verwalten.
 ### Administrator
 Administratoren verwalten Systemkonfigurationen, Benutzerzugriffsrechte, Spielverfügbarkeit und generieren Reports.
 
-## 4. Technischer Vorschlag
+## 4. Technische Architektur
 
 Die Anwendung wird als Webplattform umgesetzt.  
 Sie soll responsive sein, damit sie auf Desktop, Smartphone und Tablet funktioniert.
