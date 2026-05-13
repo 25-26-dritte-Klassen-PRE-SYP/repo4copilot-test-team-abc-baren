@@ -68,21 +68,6 @@ Aufbau:
 - CI/CD: GitHub Actions, GitLab CI, Jenkins
 - Monitoring: Prometheus, Grafana, CloudWatch
 
-## 5. Nicht-funktionale Anforderungen
-
-Die Plattform soll:
-
-| Anforderung | Ziel | Messbar |
-|---|---|---|
-| Performance | Seitenladezeit | < 2 Sekunden (P90) |
-| Verfügbarkeit | Uptime | ≥ 99.5% SLA |
-| Zuverlässigkeit | Fehlerrate | < 0.1% der Requests |
-| Erweiterbarkeit | Modular architekturiert | Plugin/Modul-System |
-| Benutzerfreundlichkeit | Intuitive UI/UX | NPS Score > 70 |
-| Sicherheit | Daten-Verschlüsselung | TLS 1.3, AES-256 |
-| Datenschutz | GDPR-Konformität | Anonymisierung, Löschung |
-| Skalierbarkeit | Load-Handling | Auto-Scaling für 10x User-Wachstum |
-| Wiederherstellung | RTO/RPO | RTO < 1h, RPO < 15min |
 
 ## 6. Sicherheit & Compliance
 
@@ -164,83 +149,6 @@ Die Plattform soll:
 - Durchschnittliche Spielsession-Dauer: > 15 Minuten
 - Customer Support Ticket Response Time: < 4 Stunden
 
-## 11. Scrum-Vorgehensweise
-
-Da nach Scrum gearbeitet wird, werden die fachlichen Details nicht vollständig im Solution Design festgelegt.  
-Stattdessen werden sie später als Product-Backlog-Items beschrieben.
-
-### 11.1 Mögliche erste Epics
-
-| Epic | Priorität | Abhängigkeiten |
-|---|---|---|
-| Projektinfrastruktur & DevOps | P0 | - |
-| Backend-Grundstruktur & API | P0 | Infrastruktur |
-| Benutzerverwaltung (Login/Registrierung) | P0 | Backend |
-| Frontend-Grundstruktur & Design System | P0 | - |
-| Website-Grundstruktur & Navigation | P1 | Frontend |
-| Zahlungsanbindung | P0 | Backend, Sicherheit |
-| Online-Spielbereich | P1 | Backend, Frontend |
-| Mitarbeiterverwaltung & Admin-Panel | P2 | Benutzerverwaltung |
-| Sicherheit & Authentifizierung (2FA, Encryption) | P0 | Backend |
-| Datenschutz & Compliance (GDPR, Logs) | P0 | Backend, Datenbank |
-| Mobile Optimierung & Responsive Design | P1 | Frontend |
-| Monitoring, Logging & Alerting | P1 | DevOps, Backend |
-| Performance Optimization | P2 | Backend, Frontend |
-| Mehrsprachigkeit & Internationalisierung | P2 | Frontend |
-| API Documentation & Developer Portal | P2 | Backend |
-
-### 11.2 Definition of Done (DoD)
-- Code-Review durchgeführt und genehmigt
-- Unit Tests mit ≥ 80% Coverage geschrieben
-- Integration Tests durchgeführt
-- Manual Testing bestätigt
-- Dokumentation aktualisiert
-- Performance & Security Checks durchgeführt
-- In Staging Environment getestet
-
-## 12. MVP-Definition (Minimum Viable Product)
-
-Das MVP sollte folgende Kernfunktionen enthalten, um die Marktviabilität zu testen:
-
-### MVP Phase 1 (Wochen 1-4)
-- Projektinfrastruktur & DevOps Setup
-- Backend & API Grundstruktur
-- Frontend Grundstruktur & Design System
-- Benutzerverwaltung (Registrierung & Login)
-- Einfache Startseite mit Navigation
-
-### MVP Phase 2 (Wochen 5-8)
-- Zahlungssystem Integration (mindestens eine Payment-Methode)
-- Erste Spielübersicht mit 2-3 einfachen Spielen
-- User Dashboard
-- Mitarbeiterbereich (Basic Admin Interface)
-- Kontaktformular
-
-### MVP Phase 3 (Wochen 9-12)
-- Mobile Responsiveness
-- Sicherheit & 2FA
-- Monitoring & Logging
-- Performance Optimierung
-- Beta Testing mit Limited User Group
-
-**MVP Acceptance Criteria:**
-- ✓ Mindestens 100 erfolgreiche Transaktionen ohne kritische Fehler
-- ✓ Page Load Time < 3 Sekunden
-- ✓ User Sign-up to First Bet < 5 Minuten
-- ✓ Uptime > 99%
-- ✓ OWASP Security Baseline erfüllt
-
-## 13. Risiken & Mitigation
-
-| Risiko | Wahrscheinlichkeit | Impact | Mitigation |
-|---|---|---|---|
-| Zahlungssystem Integration komplexer als erwartet | Mittel | Hoch | Early POC, enge Kommunikation mit Payment Provider |
-| Regulatory/Compliance-Anforderungen übersehen | Mittel | Kritisch | Legal Review, Compliance-Audit early |
-| Performance-Probleme unter Last | Niedrig | Hoch | Load Testing ab MVP Phase 2, Auto-Scaling |
-| Sicherheitsverletzung oder Datenleck | Niedrig | Kritisch | Security Review, Penetration Testing, Bug Bounty |
-| Scope Creep | Hoch | Mittel | Strikte MVP Definition, Regelmäßige Scope Reviews |
-| Schlüsselpersonal verlässt Projekt | Niedrig | Mittel | Documentation, Knowledge Sharing, Bus Factor Reduktion |
-
 ## 14. Nächste Schritte
 
 1. **Approval**: Solution Design mit Stakeholdern absprechen
@@ -249,9 +157,3 @@ Das MVP sollte folgende Kernfunktionen enthalten, um die Marktviabilität zu tes
 4. **Detaillierung**: User Stories & Acceptance Criteria für Sprint 1 definieren
 5. **Kickoff**: Team-Kickoff Meeting & erste Sprint Planning
 6. **Monitoring**: Weekly Sync mit Stakeholder über Fortschritt
-
-## 15. Fazit
-
-Das Solution Design sieht eine moderne, sichere und skalierbare Online-Casino-Plattform vor. Durch den iterativen Scrum-Ansatz und klare MVP-Definition können Risiken minimiert werden. Die Plattform ist von Anfang an auf Erweiterbarkeit und Compliance ausgelegt.
-
-Die Implementierung wird in priorisierten Epics durchgeführt, mit regelmäßigem Feedback und Anpassungen basierend auf echten Nutzerdaten.
