@@ -71,7 +71,7 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 - Sicherheit: Fähigkeit, unberechtigten Zugriff, sowohl versehentlich als auch vorsätzlich, auf Programme und Daten zu verhindern.
   - Ziel: Alle Userdaten werden sicher gespeichert, damit kein Sicherheitsrisiko entsteht.
-  - Messbarkeit: 100% der Passwörter und Zahlungsvorgänge sind vor unberechtigtem Zugriff geschützt.
+  - Messbarkeit: 99,9% der Passwörter und Zahlungsvorgänge sind vor unberechtigtem Zugriff geschützt.
 
 - Reife: Geringe Versagenshäufigkeit durch Fehlerzustände.
   - Ziel: Die Versagenshäufigkeit durch Fehler soll möglichst gering sein. 
@@ -79,4 +79,4 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 
 - Wiederherstellbarkeit: Fähigkeit, bei einem Versagen das Leistungsniveau wiederherzustellen und die direkt betroffenen Daten wiederzugewinnen. Zu   berücksichtigen sind die dafür benötigte Zeit und der benötigte Aufwand.
   - Ziel: Nach einem kritischem Systemfehler dürfen keine Daten verloren gehen. 
-  - Messbarkeit: 100% der Daten sind nach der Wiederherstellung wieder korrekt vorhanden. 
+  - Messbarkeit: 99,9% der Daten sind nach der Wiederherstellung wieder korrekt vorhanden. 
