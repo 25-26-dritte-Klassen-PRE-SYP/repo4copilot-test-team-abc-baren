@@ -1,4 +1,4 @@
-# Vorschlag Solution Design
+# Solution Design
 
 Basierend auf dem Product Goal soll aus dem lokalen Casino eine digitale, mobil nutzbare und skalierbare Online-Plattform entstehen. Die fachlichen Details werden später als Scrum-Items definiert.
 
