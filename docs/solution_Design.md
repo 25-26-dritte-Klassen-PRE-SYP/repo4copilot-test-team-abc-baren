@@ -35,7 +35,7 @@ Sie soll responsive sein, damit sie auf Desktop, Smartphone und Tablet funktioni
 
 ### 4.1 Architektur-Übersicht
 
-Möglicher Aufbau:
+Aufbau:
 
 - **Frontend**: Benutzeroberfläche für Kunden und Mitarbeiter
 - **Backend**: Verarbeitung von Logik, Benutzerdaten, Spielen und Zahlungen
@@ -43,7 +43,7 @@ Möglicher Aufbau:
 - **Schnittstellen (APIs)**: Verbindung zum Zahlungssystem und Online-Spielsystem
 - **CDN**: Für schnelle Auslieferung statischer Assets und Mediendateien
 
-### 4.2 Empfohlener Technology Stack
+### 4.2 Technology Stack
 
 #### Frontend
 - Framework: React.js, Vue.js oder Angular
