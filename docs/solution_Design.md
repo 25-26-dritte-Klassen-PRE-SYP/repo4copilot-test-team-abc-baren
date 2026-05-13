@@ -7,27 +7,6 @@ Das lokale Casino wird in eine digitale, mobil nutzbare und skalierbare Online-P
 Die Lösung ermöglicht Kunden, das Casino-Angebot online zu nutzen.  
 Folgende Aspekte haben oberste Priorität: einfache Bedienung, mobile Nutzung, schnelle Ladezeiten, Sicherheit und Erweiterbarkeit.
 
-## 2. Systemübersicht
-
-Die Plattform besteht aus folgenden Hauptbereichen:
-
-- Website / Web-App für Kunden
-- Mitarbeiterbereich zur Verwaltung
-- Online-Spielsystem
-- Zahlungssystem
-- Datenbank für Benutzer, Spiele, Zahlungen und Anfragen
-
-## 3. Rollen
-
-### Kunde
-Der Kunde registriert sich, meldet sich an, nutzt Spiele, führt Zahlungen durch und stellt Kontaktanfragen.
-
-### Mitarbeiter
-Mitarbeiter verwalten Kundendaten, Anfragen, Inhalte und Systemprozesse.
-
-### Administrator
-Administratoren verwalten Systemkonfigurationen, Benutzerzugriffsrechte, Spielverfügbarkeit und generieren Reports.
-
 ## 4. Technische Architektur
 
 Die Anwendung wird als responsive Webplattform umgesetzt und funktioniert auf Desktop, Smartphone und Tablet.
