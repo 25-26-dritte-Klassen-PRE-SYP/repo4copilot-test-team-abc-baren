@@ -63,22 +63,6 @@ Aufbau:
 - **Monitoring: Prometheus + Grafana**
   - *Begründung*: Open Source Standard, Prometheus ist Battle-Tested im Produktivbetrieb, Grafana bietet hervorragende Dashboards, kosteneffizient
 
-## 5. Nicht-funktionale Anforderungen
-
-Die Plattform erfüllt folgende Anforderungen:
-
-| Anforderung | Ziel | Messbar |
-|---|---|---|
-| Performance | Seitenladezeit | < 2 Sekunden (P90) |
-| Verfügbarkeit | Uptime | ≥ 99.5% SLA |
-| Zuverlässigkeit | Fehlerrate | < 0.1% der Requests |
-| Erweiterbarkeit | Modular architekturiert | Plugin/Modul-System |
-| Benutzerfreundlichkeit | Intuitive UI/UX | NPS Score > 70 |
-| Sicherheit | Daten-Verschlüsselung | TLS 1.3, AES-256 |
-| Datenschutz | GDPR-Konformität | Anonymisierung, Löschung |
-| Skalierbarkeit | Load-Handling | Auto-Scaling für 10x User-Wachstum |
-| Wiederherstellung | RTO/RPO | RTO < 1h, RPO < 15min |
-
 ## 6. Sicherheit & Compliance
 
 ### 6.1 Authentifizierung & Autorisierung
@@ -164,81 +148,6 @@ Die Plattform erfüllt folgende Anforderungen:
 - Durchschnittliche Spielsession-Dauer: > 15 Minuten
 - Customer Support Ticket Response Time: < 4 Stunden
 
-## 11. Scrum-Vorgehensweise
-
-Da nach Scrum gearbeitet wird, werden die fachlichen Details als Product-Backlog-Items definiert (nicht vollständig im Solution Design).
-
-### 11.1 Mögliche erste Epics
-
-| Epic | Priorität | Abhängigkeiten |
-|---|---|---|
-| Projektinfrastruktur & DevOps | P0 | - |
-| Backend-Grundstruktur & API | P0 | Infrastruktur |
-| Benutzerverwaltung (Login/Registrierung) | P0 | Backend |
-| Frontend-Grundstruktur & Design System | P0 | - |
-| Website-Grundstruktur & Navigation | P1 | Frontend |
-| Zahlungsanbindung | P0 | Backend, Sicherheit |
-| Online-Spielbereich | P1 | Backend, Frontend |
-| Mitarbeiterverwaltung & Admin-Panel | P2 | Benutzerverwaltung |
-| Sicherheit & Authentifizierung (2FA, Encryption) | P0 | Backend |
-| Datenschutz & Compliance (GDPR, Logs) | P0 | Backend, Datenbank |
-| Mobile Optimierung & Responsive Design | P1 | Frontend |
-| Monitoring, Logging & Alerting | P1 | DevOps, Backend |
-| Performance Optimization | P2 | Backend, Frontend |
-| API Documentation & Developer Portal | P2 | Backend |
-
-### 11.2 Definition of Done (DoD)
-- Code-Review durchgeführt und genehmigt
-- Unit Tests mit ≥ 80% Coverage geschrieben
-- Integration Tests durchgeführt
-- Manual Testing bestätigt
-- Dokumentation aktualisiert
-- Performance & Security Checks durchgeführt
-- In Staging Environment getestet
-
-## 12. MVP-Definition (Minimum Viable Product)
-
-Das MVP enthält folgende Kernfunktionen zum Testen der Marktviabilität:
-
-### MVP Phase 1 (Wochen 1-4)
-- Projektinfrastruktur & DevOps Setup
-- Backend & API Grundstruktur
-- Frontend Grundstruktur & Design System
-- Benutzerverwaltung (Registrierung & Login)
-- Einfache Startseite mit Navigation
-
-### MVP Phase 2 (Wochen 5-8)
-- Zahlungssystem Integration (Stripe mit Kreditkarte & Banküberweisung)
-- Erste Spielübersicht mit 3 einfachen Spielen
-- User Dashboard
-- Mitarbeiterbereich (Basic Admin Interface)
-- Kontaktformular
-
-### MVP Phase 3 (Wochen 9-12)
-- Mobile Responsiveness (Tablet & Smartphone)
-- Sicherheit & 2FA für Mitarbeiter
-- Monitoring & Logging
-- Performance Optimierung
-- Beta Testing mit Limited User Group (100-200 Nutzer)
-
-**MVP Acceptance Criteria:**
-- ✓ Mindestens 100 erfolgreiche Transaktionen ohne kritische Fehler
-- ✓ Page Load Time < 3 Sekunden
-- ✓ User Sign-up to First Bet < 5 Minuten
-- ✓ Uptime > 99%
-- ✓ OWASP Security Baseline erfüllt
-
-## 13. Risiken & Mitigation
-
-| Risiko | Wahrscheinlichkeit | Impact | Mitigation |
-|---|---|---|---|
-| Zahlungssystem Integration komplexer als erwartet | Mittel | Hoch | Early POC mit Stripe, enge Kommunikation mit Payment Provider |
-| Regulatory/Compliance-Anforderungen übersehen | Mittel | Kritisch | Legal Review in Woche 1, Compliance-Audit vor MVP Release |
-| Performance-Probleme unter Last | Niedrig | Hoch | Load Testing ab MVP Phase 2 mit k6, Auto-Scaling konfigurieren |
-| Sicherheitsverletzung oder Datenleck | Niedrig | Kritisch | Security Review quarterly, Penetration Testing jährlich, Bug Bounty Programm |
-| Scope Creep | Hoch | Mittel | Strikte MVP Definition, wöchentliche Scope Reviews mit PO |
-| Schlüsselpersonal verlässt Projekt | Niedrig | Mittel | Kontinuierliche Dokumentation, regelmäßiges Knowledge Sharing, min. 2 Personen pro Bereich |
-
 ## 14. Nächste Schritte
 
 1. **Approval**: Solution Design mit Stakeholdern absprechen (Woche 1)
@@ -248,7 +157,6 @@ Das MVP enthält folgende Kernfunktionen zum Testen der Marktviabilität:
 5. **Kickoff**: Team-Kickoff Meeting & erste Sprint Planning (Woche 2)
 6. **Monitoring**: Weekly Sync mit Stakeholder über Fortschritt (ab Woche 2)
 
-## 15. Fazit
 
 Das Solution Design definiert eine moderne, sichere und skalierbare Online-Casino-Plattform. Durch den iterativen Scrum-Ansatz und klare MVP-Definition werden Risiken minimiert. 
 
