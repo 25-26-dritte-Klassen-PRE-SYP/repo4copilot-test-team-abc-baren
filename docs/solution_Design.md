@@ -7,27 +7,6 @@ Basierend auf dem Product Goal soll aus dem lokalen Casino eine digitale, mobil 
 Die Lösung soll Kunden ermöglichen, das Casino-Angebot online zu nutzen.  
 Dabei stehen einfache Bedienung, mobile Nutzung, schnelle Ladezeiten, Sicherheit und spätere Erweiterbarkeit im Vordergrund.
 
-## 2. Systemübersicht
-
-Die Plattform besteht aus folgenden Hauptbereichen:
-
-- Website / Web-App für Kunden
-- Mitarbeiterbereich zur Verwaltung
-- Online-Spielsystem
-- Zahlungssystem
-- Datenbank für Benutzer, Spiele, Zahlungen und Anfragen
-
-## 3. Rollen
-
-### Kunde
-Der Kunde kann sich registrieren, anmelden, Spiele nutzen, Zahlungen durchführen und Kontaktanfragen stellen.
-
-### Mitarbeiter
-Mitarbeiter können Kundendaten, Anfragen, Inhalte und Systemprozesse verwalten.
-
-### Administrator
-Administratoren verwalten Systemkonfigurationen, Benutzerzugriffsrechte, Spielverfügbarkeit und generieren Reports.
-
 ## 4. Technische Architektur
 
 Die Anwendung wird als Webplattform umgesetzt.  
