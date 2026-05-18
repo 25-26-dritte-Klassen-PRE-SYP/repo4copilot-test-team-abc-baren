@@ -1,6 +1,6 @@
-# Solution Design - Erste Version
+# Solution Design
 
-Diese Datei beschreibt die erste, schlanke Version der digitalen Glücksspiel-Plattform. Der Fokus liegt auf dem Minimum Viable Product (MVP) ohne ausführliche Sicherheits- oder Benutzerverwaltungsdetails.
+Dieses Dokument beschreibt die erste technische Lösung für die digitale Glücksspiel-Plattform. Der Fokus liegt auf einer schlanken MVP-Version ohne komplexe Sicherheits-, Zahlungs- oder Benutzerverwaltungs-Themen.
 
 ## 1. Architekturübersicht
 
@@ -9,14 +9,14 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 ### 1.1 Komponenten
 
 - **Frontend**: Responsive Web-Anwendung für Kunden
-- **Backend**: API-Service für Geschäftslogik und Data Processing
-- **Datenbank**: Zentrale persistente Speicherung aller relevanten Daten
-- **Integrationen**: Zahlungsdienstleister
+- **Backend**: API-Service für Geschäftslogik
+- **Datenbank**: Zentrale persistenten Speicherung aller relevanten Daten
+- **Integrationen**: grundlegende externe Dienste
 - **Infrastruktur**: Containerisierter Betrieb, automatisiertes Deployment
 
 ### 1.2 Architekturprinzipien
 
-- **Mobile-First**: Nutzererlebnis wird zuerst für mobile Endgeräte optimiert
+- **Mobile-First**: Nutzererlebnis zuerst für mobile Endgeräte
 - **API-zentriert**: Alle Funktionen werden über APIs verfügbar gemacht
 - **Modularität**: klare Trennung zwischen Frontend, Backend und Schnittstellen
 
@@ -26,12 +26,16 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 |---|---|---|
 | Frontend | React.js + TypeScript | bewährtes SPA-Ökosystem, starke Typisierung, gute Performance |
 | Styling | Tailwind CSS | schnelle Umsetzung, konsistente Designs, geringe Bundle-Größe |
-| Backend | Node.js + Express | JavaScript/TypeScript-End-to-End, rasche Entwicklung |
+| State | TanStack Query + Redux Toolkit | effizientes Daten-Caching, vorhersehbarer State |
+| Backend | Node.js + Express / NestJS | JavaScript/TypeScript-End-to-End, rasche Entwicklung |
 | API | RESTful API | einfache Integration, klarer Vertrag |
 | Datenbank | PostgreSQL | ACID, JSONB, bewährte relationale Modellierung |
+| Cache | Redis | schnelle Caching-Funktionen, temporäre Daten |
 | Infrastruktur | Docker | einfache lokale Entwicklung und Deployment |
 | CI/CD | GitHub Actions | direkte GitHub-Integration, automatisierte Pipelines |
-| Tests | Jest, Cypress | von Unit bis E2E abgedeckt |
+| Monitoring | Prometheus + Grafana | Open Source, real-time Metriken |
+| Logging | ELK Stack | zentrale Analyse und Debugging |
+| Tests | Jest, Cypress, k6 | von Unit bis Performance abgedeckt |
 
 ## 3. Kernkomponenten
 
@@ -44,9 +48,10 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 
 ### 3.2 Backend
 
-- zentrale Business-Logik für Spiele, Buchungen, Zahlungen und Reporting
+- zentrale Business-Logik für Spiele, Buchungen und Reporting
 - REST-API als Contract für Frontend und externe Integrationen
 - Schichten: API Layer, Service Layer, Data Access Layer
+- Event-basierte Kommunikation für asynchrone Prozesse
 
 ### 3.3 Datenmodell
 
@@ -57,20 +62,31 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 
 ### 3.4 Integration
 
-- **Zahlungssystem**: Stripe oder vergleichbarer Anbieter mit Webhook-Validierung
-- **Externe Services**: E-Mail/Benachrichtigung, Monitoring
+- grundlegende APIs für externe Dienste
+- Webhook-basierte Kommunikation für externe Ereignisse
+- einfache Anbindung von Monitoring- und Benachrichtigungsdiensten
 
-## 4. Teststrategie
+## 4. Betrieb
+
+### 4.1 Deployment
+
+- getrennte Environments: Dev, Staging, Prod
+- automatisierte Build-, Test- und Release-Pipeline
+- Blue/Green- oder Canary-Deployments zur Minimierung von Ausfallzeiten
+- Rollbacks bei kritischen Fehlern
+
+### 4.2 Monitoring
+
+- wichtige Metriken: Latenz, Fehlerquote, Auslastung, DB-Verbindungen
+- Alerting bei kritischen Thresholds
+- zentralisiertes Log-Management mit Suche und Analyse
+
+## 5. Teststrategie
 
 | Testtyp | Ziel | Tool |
 |---|---|---|
 | Unit Tests | Funktionssicherheit einzelner Module | Jest |
 | Integration Tests | Korrekte Zusammenarbeit von API und DB | Jest + Testcontainers |
 | E2E Tests | Vollständige Benutzerflüsse prüfen | Cypress |
-| Performance | Antwortzeiten prüfen | k6 |
-
-## 5. Betrieb
-
-- getrennte Environments: Dev, Staging
-- automatisierte Build-, Test- und Release-Pipeline
-- Docker-Container für Backend und Datenbank
+| Performance | Antwortzeiten und Lastverhalten prüfen | k6 |
+| UAT | Abnahme durch Stakeholder | manuelle Tests |
