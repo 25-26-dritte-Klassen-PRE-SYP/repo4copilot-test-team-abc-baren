@@ -6,7 +6,7 @@ Dieses Dokument beschreibt die technische Lösung für die digitale Glücksspiel
 
 Die Lösung folgt einer modularen, service-orientierten Architektur.
 
-### 3.1 Komponenten
+### 1.1 Komponenten
 
 - **Frontend**: Responsive Web-Anwendung für Kunden und Mitarbeiter
 - **Backend**: API-Service für Geschäftslogik und Data Processing
@@ -14,14 +14,14 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 - **Integrationen**: Zahlungsdienstleister, Spielprovider, Monitoring
 - **Infrastruktur**: Containerisierter Betrieb, automatisiertes Deployment, Observability
 
-### 3.2 Architekturprinzipien
+### 1.2 Architekturprinzipien
 
 - **Mobile-First**: Nutzererlebnis wird zuerst für mobile Endgeräte optimiert
 - **API-zentriert**: Alle Funktionen werden über APIs verfügbar gemacht
 - **Sicherheit durch Design**: Secure-by-default-Konfigurationen
 - **Modularität**: klare Trennung zwischen Frontend, Backend und Schnittstellen
 
-## 4. Technologiestack
+## 2. Technologiestack
 
 | Bereich | Technologie | Vorteile |
 |---|---|---|
@@ -39,74 +39,74 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 | Logging | ELK Stack | zentrale Analyse und Debugging |
 | Tests | Jest, Cypress, k6, OWASP ZAP | von Unit bis Security-Tests abgedeckt |
 
-## 5. Kernkomponenten
+## 3. Kernkomponenten
 
-### 5.1 Frontend
+### 3.1 Frontend
 
 - responsive Benutzeroberfläche für Kunden und Administratoren
 - Fokus auf performante Darstellung und flüssige Interaktion
 - mobile Navigation, schnelle Produktfilterung, intuitive Buchungsstrecken
 - komponentengesteuerte Architektur mit klarer Trennung von UI, Services und State
 
-### 5.2 Backend
+### 3.2 Backend
 
 - zentrale Business-Logik für Nutzer, Spiele, Buchungen, Zahlungen und Reporting
 - REST-API als Contract für Frontend und externe Integrationen
 - Schichten: API Layer, Service Layer, Data Access Layer
 - Event-basierte Kommunikation für asynchrone Prozesse (z. B. Zahlungsbestätigung, Spielereignisse)
 
-### 5.3 Datenmodell
+### 3.3 Datenmodell
 
 - relationale Kernobjekte: Nutzer, Spiele, Buchungen, Transaktionen, Sessions
 - JSONB-Felder nur für flexible Metadaten, nicht für primäre Geschäftslogik
 - klar definierte Fremdschlüssel und Konsistenzregeln
 - Audit-Trail für alle kritischen Aktionen
 
-### 5.4 Integration
+### 3.4 Integration
 
 - **Zahlungssystem**: Stripe oder vergleichbarer Anbieter mit Webhook-Validierung
 - **Spielprovider**: API-Integration für externe Spiele / RNG-zertifizierte Systeme
 - **Externe Services**: E-Mail/Benachrichtigung, Identitätsprüfung, Monitoring
 
-## 6. Sicherheit & Compliance (aktuell nicht wichtig für Testprojekt)
+## 4. Sicherheit & Compliance (aktuell nicht wichtig für Testprojekt)
 
-### 6.1 Authentifizierung & Autorisierung
+### 4.1 Authentifizierung & Autorisierung
 
 - OAuth 2.0 / OpenID Connect
 - rollenbasierte Zugriffskontrolle (RBAC)
 - 2FA für Mitarbeiter, optional für Kunden
 - sichere Session-Verwaltung mit HttpOnly-, Secure- und SameSite-Cookies
 
-### 6.2 Datenschutz & Verschlüsselung
+### 4.2 Datenschutz & Verschlüsselung
 
 - TLS 1.3 für alle Verbindungen
 - Datenverschlüsselung im Transit und bei Bedarf im Ruhezustand
 - Passwort-Hashing mit bcrypt oder Argon2
 - Datenschutzkonformes Logging und Retention-Policy
 
-### 6.3 Compliance
+### 4.3 Compliance
 
 - GDPR-konformes Consent Management
 - PCI-DSS-konforme Zahlungsabwicklung ohne Kartendaten-Speicherung
 - Altersverifikation (18+) und Responsible Gaming
 - AML/KYC als Bestandteil des Onboarding-Prozesses
 
-## 7. Betrieb
+## 5. Betrieb
 
-### 7.1 Deployment
+### 5.1 Deployment
 
 - getrennte Environments: Dev, Staging, Prod
 - automatisierte Build-, Test- und Release-Pipeline
 - Blue/Green- oder Canary-Deployments zur Minimierung von Ausfallzeiten
 - Rollbacks bei kritischen Fehlern
 
-### 7.2 Monitoring
+### 5.2 Monitoring
 
 - wichtige Metriken: Latenz, Fehlerquote, Auslastung, DB-Verbindungen
 - Alerting bei kritischen Thresholds
 - zentralisiertes Log-Management mit Suche und Analyse
 
-## 8. Teststrategie
+## 6. Teststrategie
 
 | Testtyp | Ziel | Tool |
 |---|---|---|
