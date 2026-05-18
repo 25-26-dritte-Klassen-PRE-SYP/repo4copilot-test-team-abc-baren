@@ -1,37 +1,8 @@
 # Solution Design
 
-Dieses Dokument beschreibt die Lösung für die digitale Transformation des lokalen Casinos zu einer mobilen, skalierbaren Online-Plattform. Der Fokus liegt auf einer pragmatischen Architektur, klaren Qualitätszielen und einem umsetzbaren MVP-Ansatz.
+Dieses Dokument beschreibt die technische Lösung für die digitale Glücksspiel-Plattform. Der Fokus liegt auf Architektur, Technologie, Betrieb und technischer Absicherung.
 
-## 1. Ziel der Lösung
-
-Die Plattform ermöglicht Kunden und Mitarbeitern, Casino-Funktionen online zu nutzen. Wichtige Ziele sind:
-
-- intuitive Nutzerführung für Kunden und Mitarbeiter
-- mobile Verfügbarkeit auf Smartphone, Tablet und Desktop
-- hohe Performance und kurze Ladezeiten
-- sichere Zahlungs- und Spielabwicklung
-- einfache Erweiterbarkeit für weitere Angebote
-
-## 2. Projektumfang
-
-### 2.1 MVP
-
-Die erste Auslieferung umfasst:
-
-- Nutzerregistrierung und Login
-- Produktkatalog mit Spielangeboten
-- Buchung und Bezahlung von Spielen
-- Spielstart und Ergebnisverarbeitung
-- Admin-Panel für Management und Reporting
-
-### 2.2 Erweiterungen nach MVP
-
-- Anbindung weiterer Spielprovider
-- Loyalty-Programm und Promotion-Mechaniken
-- detaillierte Business-Reports
-- erweiterte Authentifizierung und Compliance-Features
-
-## 3. Architekturübersicht
+## 1. Architekturübersicht
 
 Die Lösung folgt einer modularen, service-orientierten Architektur.
 
@@ -154,27 +125,3 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 | Security | Schwachstellen identifizieren | OWASP ZAP |
 | UAT | Abnahme durch Stakeholder | manuelle Tests |
 
-## 9. Erfolgskriterien & KPIs
-
-- Page Load Time: < 2 Sekunden (90th percentile)
-- API Response Time: < 200 ms (95th percentile)
-- Uptime: ≥ 99,5 %
-- Fehlerquote: < 0,1 %
-- Zahlungsabschlussrate: > 90 %
-- Kunden-Registrierungen und Retention-Rate als Business-Metriken
-
-## 10. Risiken & Maßnahmen
-
-- **Komplexität externer Integrationen**: Schrittweise Anbindung, klare API-Verträge, Test-Sandboxen
-- **Regulatorische Anforderungen**: Compliance-Review frühzeitig einplanen
-- **Performance-Spitzen**: Lasttests und Auto-Scaling vorbereiten
-- **Sicherheitsvorfälle**: regelmäßige Penetrationstests und Security-Reviews
-
-## 11. Nächste Schritte
-
-1. Stakeholder-Abstimmung und finaler Scope
-2. Grobe Release-Planung und Sprint-Setup
-3. Infrastruktur- und Repository-Setup
-4. Detaillierte User Stories für Sprint 1
-5. Architektur-Review und Proof-of-Concept
-6. Start der Implementierung

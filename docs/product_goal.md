@@ -52,6 +52,50 @@ Die Anzahl der Kunden ist begrenzt, da nur Personen erreicht werden, die das Cas
 - Online-Spielsystem
 - Zahlungssystem
 
+## Projektumfang
+
+### MVP
+
+Die erste Auslieferung umfasst:
+
+- Nutzerregistrierung und Login
+- Produktkatalog mit Spielangeboten
+- Buchung und Bezahlung von Spielen
+- Spielstart und Ergebnisverarbeitung
+- Admin-Panel für Management und Reporting
+
+### Erweiterungen nach MVP
+
+- Anbindung weiterer Spielprovider
+- Loyalty-Programm und Promotion-Mechaniken
+- detaillierte Business-Reports
+- erweiterte Authentifizierung und Compliance-Features
+
+## Erfolgskriterien
+
+- Page Load Time: < 2 Sekunden (90th percentile)
+- API Response Time: < 200 ms (95th percentile)
+- Uptime: ≥ 99,5 %
+- Fehlerquote: < 0,1 %
+- Zahlungsabschlussrate: > 90 %
+- Kunden-Registrierungen und Retention-Rate als Business-Metriken
+
+## Risiken
+
+- **Komplexität externer Integrationen**: Schrittweise Anbindung, klare API-Verträge, Test-Sandboxen
+- **Regulatorische Anforderungen**: Compliance-Review frühzeitig einplanen
+- **Performance-Spitzen**: Lasttests und Auto-Scaling vorbereiten
+- **Sicherheitsvorfälle**: regelmäßige Penetrationstests und Security-Reviews
+
+## Nächste Schritte
+
+1. Stakeholder-Abstimmung und finaler Scope
+2. Grobe Release-Planung und Sprint-Setup
+3. Infrastruktur- und Repository-Setup
+4. Detaillierte User Stories für Sprint 1
+5. Architektur-Review und Proof-of-Concept
+6. Start der Implementierung
+
 ### NFA
 - Modifizierbarkeit: Aufwand zur Ausführung von Verbesserungen, zur Fehlerbeseitigung oder Anpassung an Umgebungsänderungen.
   - Ziel: Die Zeit für die Implementierung von neuen Funktionen soll möglichst gering sein
