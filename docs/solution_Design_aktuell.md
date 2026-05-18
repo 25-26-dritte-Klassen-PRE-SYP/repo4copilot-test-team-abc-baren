@@ -153,12 +153,3 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 | Performance | Antwortzeiten und Lastverhalten prüfen | k6 |
 | Security | Schwachstellen identifizieren | OWASP ZAP |
 | UAT | Abnahme durch Stakeholder | manuelle Tests |
-
-## 11. Nächste Schritte
-
-1. Stakeholder-Abstimmung und finaler Scope
-2. Grobe Release-Planung und Sprint-Setup
-3. Infrastruktur- und Repository-Setup
-4. Detaillierte User Stories für Sprint 1
-5. Architektur-Review und Proof-of-Concept
-6. Start der Implementierung
