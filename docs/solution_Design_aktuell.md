@@ -1,6 +1,6 @@
 # Solution Design
 
-Dieses Dokument beschreibt die Lösung für die digitale Transformation des lokalen Casinos zu einer mobilen, skalierbaren Online-Plattform. Der Fokus liegt auf einer pragmatischen Architektur, klaren Qualitätszielen und einem umsetzbaren MVP-Ansatz.
+Das lokale Casino wird in eine digitale, mobil nutzbare und skalierbare Online-Plattform umgebaut. Die fachlichen Details werden später als Scrum-Items definiert.
 
 ## 1. Ziel der Lösung
 
