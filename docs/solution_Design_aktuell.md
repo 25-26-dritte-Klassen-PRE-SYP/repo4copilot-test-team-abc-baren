@@ -19,7 +19,6 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 - **Mobile-First**: Nutzererlebnis wird zuerst für mobile Endgeräte optimiert
 - **API-zentriert**: Alle Funktionen werden über APIs verfügbar gemacht
 - **Sicherheit durch Design**: Secure-by-default-Konfigurationen
-- **Skalierbarkeit**: horizontale Skalierung der Services
 - **Modularität**: klare Trennung zwischen Frontend, Backend und Schnittstellen
 
 ## 4. Technologiestack
@@ -69,7 +68,7 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 - **Spielprovider**: API-Integration für externe Spiele / RNG-zertifizierte Systeme
 - **Externe Services**: E-Mail/Benachrichtigung, Identitätsprüfung, Monitoring
 
-## 6. Sicherheit & Compliance
+## 6. Sicherheit & Compliance (aktuell nicht wichtig für Testprojekt)
 
 ### 6.1 Authentifizierung & Autorisierung
 
@@ -92,7 +91,7 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 - Altersverifikation (18+) und Responsible Gaming
 - AML/KYC als Bestandteil des Onboarding-Prozesses
 
-## 7. Betrieb & Skalierbarkeit
+## 7. Betrieb
 
 ### 7.1 Deployment
 
@@ -101,14 +100,7 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 - Blue/Green- oder Canary-Deployments zur Minimierung von Ausfallzeiten
 - Rollbacks bei kritischen Fehlern
 
-### 7.2 Skalierung
-
-- horizontale Skalierung von API- und Frontend-Services hinter Load Balancers
-- Auto-Scaling basierend auf CPU, Memory und Request-Rate
-- Redis für Session- und Cache-Layer
-- PostgreSQL-Replikation und regelmäßige Backups
-
-### 7.3 Monitoring
+### 7.2 Monitoring
 
 - wichtige Metriken: Latenz, Fehlerquote, Auslastung, DB-Verbindungen
 - Alerting bei kritischen Thresholds
