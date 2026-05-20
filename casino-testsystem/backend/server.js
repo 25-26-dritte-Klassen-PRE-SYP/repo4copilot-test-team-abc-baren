@@ -1,7 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
-require('dotenv').config();
+const path = require('path');
+const fs = require('fs');
+
+const rootEnvPath = path.resolve(__dirname, '..', '.env');
+const backendEnvPath = path.resolve(__dirname, '.env');
+const envPath = fs.existsSync(rootEnvPath) ? rootEnvPath : backendEnvPath;
+
+require('dotenv').config({ path: envPath });
 
 const app = express();
 
