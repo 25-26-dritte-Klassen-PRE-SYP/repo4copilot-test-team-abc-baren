@@ -62,14 +62,15 @@ Check:
 
 ## 3. Datenbanktabelle erstellen
 
+Die Datei [db_init.sql](db_init.sql) legt das benoetigte Schema an.
+
 In Render bei PostgreSQL (Shell/Console) oder in einem SQL-Tool ausfuehren:
 
 ```sql
-CREATE TABLE IF NOT EXISTS items (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL
-);
+\i db_init.sql
 ```
+
+Falls dein SQL-Tool `\i` nicht unterstuetzt, einfach den Inhalt aus [db_init.sql](db_init.sql) direkt ausfuehren.
 
 ## 4. Backend auf Render deployen (Web Service)
 
