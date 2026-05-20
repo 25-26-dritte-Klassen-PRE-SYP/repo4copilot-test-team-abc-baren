@@ -33,8 +33,6 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 | Cache | Redis | schnelle Caching-Funktionen, temporäre Daten |
 | Infrastruktur | Docker | einfache lokale Entwicklung und Deployment |
 | CI/CD | GitHub Actions | direkte GitHub-Integration, automatisierte Pipelines |
-| Monitoring | Prometheus + Grafana | Open Source, real-time Metriken |
-| Logging | ELK Stack | zentrale Analyse und Debugging |
 | Tests | Jest, Cypress, k6 | von Unit bis Performance abgedeckt |
 
 ## 3. Kernkomponenten
@@ -64,7 +62,6 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 
 - grundlegende APIs für externe Dienste
 - Webhook-basierte Kommunikation für externe Ereignisse
-- einfache Anbindung von Monitoring- und Benachrichtigungsdiensten
 
 ## 4. Betrieb
 
@@ -75,11 +72,10 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 - Blue/Green- oder Canary-Deployments zur Minimierung von Ausfallzeiten
 - Rollbacks bei kritischen Fehlern
 
-### 4.2 Monitoring
+### 4.2 Minimaler Betrieb
 
-- wichtige Metriken: Latenz, Fehlerquote, Auslastung, DB-Verbindungen
-- Alerting bei kritischen Thresholds
-- zentralisiertes Log-Management mit Suche und Analyse
+- grundlegendes Betriebssetup für Deployment und Auslieferung
+- Fokus auf einfache Inbetriebnahme und stabile Ausführung
 
 ## 5. Teststrategie
 
