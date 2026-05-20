@@ -15,13 +15,22 @@ casino-testsystem
 `- backend
 ```
 
+## Einmalig alles installieren (global)
+
+```powershell
+cd casino-testsystem
+npm run install:all
+```
+
+Das installiert alle noetigen Pakete in `backend` und `frontend`.
+
 ## 1. Backend lokal starten
 
 ```powershell
 cd casino-testsystem
 Copy-Item example.env .env
 cd backend
-npm install
+npm run dev
 ```
 
 Dann in der globalen `.env` (im Ordner `casino-testsystem`) die Werte anpassen:
@@ -34,12 +43,6 @@ NODE_ENV=development
 VITE_API_URL=http://localhost:3000
 ```
 
-Start:
-
-```powershell
-npm run dev
-```
-
 Check:
 
 - `http://localhost:3000` muss `Backend laeuft` anzeigen.
@@ -50,7 +53,6 @@ In einem zweiten Terminal:
 
 ```powershell
 cd casino-testsystem/frontend
-npm install
 npm run dev
 ```
 
@@ -64,8 +66,8 @@ In Render bei PostgreSQL (Shell/Console) oder in einem SQL-Tool ausfuehren:
 
 ```sql
 CREATE TABLE IF NOT EXISTS items (
-	id SERIAL PRIMARY KEY,
-	name TEXT NOT NULL
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL
 );
 ```
 
@@ -109,7 +111,7 @@ git push
 
 ## Globale .env vs Render
 
-- Lokal: Eine globale Datei `casino-testsystem/.env` reicht jetzt fuer Backend und Frontend.
+- Lokal: Eine globale Datei `casino-testsystem/.env` reicht fuer Backend und Frontend.
 - Render: Backend und Frontend laufen als getrennte Services. Deshalb setzt du die Variablen in Render weiterhin pro Service.
 - Optional in Render: Du kannst Environment Groups nutzen, um gemeinsame Werte zentral zu verwalten.
 
