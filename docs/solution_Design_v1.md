@@ -27,7 +27,7 @@ Die Lösung folgt einer modularen, service-orientierten Architektur.
 | Frontend | React.js + TypeScript | bewährtes SPA-Ökosystem, starke Typisierung, gute Performance |
 | Styling | Tailwind CSS | schnelle Umsetzung, konsistente Designs, geringe Bundle-Größe |
 | State | TanStack Query + Redux Toolkit | effizientes Daten-Caching, vorhersehbarer State |
-| Backend | Node.js + Express / NestJS | JavaScript/TypeScript-End-to-End, rasche Entwicklung |
+| Backend | Node.js + NestJS | JavaScript/TypeScript-End-to-End, rasche Entwicklung |
 | API | RESTful API | einfache Integration, klarer Vertrag |
 | Datenbank | PostgreSQL | ACID, JSONB, bewährte relationale Modellierung |
 | Cache | Redis | schnelle Caching-Funktionen, temporäre Daten |
