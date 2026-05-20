@@ -32,8 +32,11 @@ Eine digitale Glücksspiel-Plattform mit verschiedenen Spielen basierend auf dem
 
 ## 📋 Voraussetzungen
 
+**Für lokale Entwicklung (ohne Docker):**
+- Node.js 18+ (https://nodejs.org/)
+
+**Für Docker:**
 - Docker & Docker Compose
-- oder Node.js 18+ und PostgreSQL 15
 
 ## 🚀 Quickstart mit Docker Compose
 
@@ -49,6 +52,39 @@ docker-compose up --build
 # Frontend: http://localhost:3001
 # Backend API: http://localhost:3000/api
 ```
+
+## 🚀 Alternative: Ohne Docker (Lokal mit npm)
+
+Wenn du Docker nicht installieren möchtest, kannst du das Projekt direkt mit Node.js starten:
+
+### Voraussetzungen
+- **Node.js 18+** installieren von https://nodejs.org/
+
+### Backend starten
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Das Backend läuft dann auf `http://localhost:3000/api`
+
+### Frontend starten (in neuem Terminal)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Das Frontend läuft dann auf `http://localhost:3001`
+
+### Fertig! 🎉
+
+Öffne einfach `http://localhost:3001` im Browser und los gehts!
+
+**Hinweis:** Die Daten werden im RAM gespeichert (In-Memory). Nach einem Neustart sind die Spielergebnisse weg.
 
 ## 🏗️ Projekt-Struktur
 
