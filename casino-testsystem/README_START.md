@@ -6,14 +6,8 @@ Voraussetzungen
 - Node.js (>=18) und `npm` installiert
 - Optional: PostgreSQL wenn du die DB lokal betreiben willst
 
-1) Abhängigkeiten installieren
 
-```powershell
-cd casino-testsystem
-npm run install:all
-```
-
-2) Environment-Datei anlegen
+1) Environment-Datei anlegen
 
 Eine Kopie von `example.env` anlegen und nach Bedarf anpassen:
 
@@ -23,6 +17,13 @@ Copy-Item example.env .env
 ```
 
 Wichtige Variablen (in `casino-testsystem/.env`):
+
+2) Abhängigkeiten installieren
+
+```powershell
+cd casino-testsystem
+npm run install:all
+```
 
 - `DATABASE_URL` — PostgreSQL-Verbindungsstring (lokal oder Render)
 - `PORT` — Backend-Port (Standard: `3000`)
