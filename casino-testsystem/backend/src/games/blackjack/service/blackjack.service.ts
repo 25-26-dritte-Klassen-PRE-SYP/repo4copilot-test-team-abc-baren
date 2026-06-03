@@ -1,5 +1,5 @@
 import type { BlackjackGameInsert } from '../model/blackjack.model'
-import { createBlackjackRepository } from '../model/blackjack.model.js'
+import { createBlackjackRepository } from '../model/blackjack.model.ts'
 
 export type BlackjackGameStatus = 'PLAYER_TURN' | 'DEALER_TURN' | 'FINISHED'
 export type BlackjackResult = 'WIN' | 'LOSE' | 'DRAW' | null

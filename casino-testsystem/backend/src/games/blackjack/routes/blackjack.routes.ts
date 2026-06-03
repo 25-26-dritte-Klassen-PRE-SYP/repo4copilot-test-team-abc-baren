@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import type { BlackjackService } from '../service/blackjack.service'
-import { createBlackjackController } from '../controller/blackjack.controller.js'
+import { createBlackjackController } from '../controller/blackjack.controller.ts'
 
 export function createBlackjackRouter(service: BlackjackService) {
 	const router = Router()

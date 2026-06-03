@@ -1,9 +1,9 @@
 import express from 'express'
 import cors from 'cors'
-import { pool } from './lib/db.js'
-import { createBlackjackRepository } from './games/blackjack/model/blackjack.model.js'
-import { createBlackjackRouter } from './games/blackjack/routes/blackjack.routes.js'
-import { createBlackjackService, type BlackjackService } from './games/blackjack/service/blackjack.service.js'
+import { pool } from './lib/db.ts'
+import { createBlackjackRepository } from './games/blackjack/model/blackjack.model.ts'
+import { createBlackjackRouter } from './games/blackjack/routes/blackjack.routes.ts'
+import { createBlackjackService, type BlackjackService } from './games/blackjack/service/blackjack.service.ts'
 
 export type CreateAppOptions = {
   blackjackService?: BlackjackService

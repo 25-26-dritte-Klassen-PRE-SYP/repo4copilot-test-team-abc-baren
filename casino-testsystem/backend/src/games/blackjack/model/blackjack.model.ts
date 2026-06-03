@@ -1,9 +1,9 @@
-import { pool } from '../../../lib/db.js'
+import { pool } from '../../../lib/db.ts'
 import type {
 	BlackjackGameRecord,
 	BlackjackGameStatus,
 	BlackjackResult,
-} from '../service/blackjack.service.js'
+} from '../service/blackjack.service.ts'
 
 type BlackjackGameRow = {
 	id: number
