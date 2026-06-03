@@ -1,4 +1,4 @@
-import { GameCard } from '../components/GameCard'
+import { GameCard } from '../games/blackjack/components/GameCard'
 
 type GameDefinition = {
   title: string
