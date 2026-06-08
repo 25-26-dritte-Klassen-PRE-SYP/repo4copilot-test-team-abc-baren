@@ -3,9 +3,9 @@ import { BlackjackCard } from '../components/BlackjackCard'
 import { BlackjackControls } from '../components/BlackjackControls'
 import { BlackjackStatus } from '../components/BlackjackStatus'
 import {
-	BlackjackGameView,
-	BlackjackResult,
-	BlackjackGameStatus,
+	type BlackjackGameView,
+	type BlackjackResult,
+	type BlackjackGameStatus,
 	hitBlackjackGame,
 	loadBlackjackGame,
 	standBlackjackGame,

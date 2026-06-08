@@ -1,4 +1,4 @@
-import type { BlackjackGameStatus, BlackjackResult } from '../../services/blackjackApi'
+import type { BlackjackGameStatus, BlackjackResult } from '../services/blackjackApi'
 
 type BlackjackStatusProps = {
 	playerName: string
