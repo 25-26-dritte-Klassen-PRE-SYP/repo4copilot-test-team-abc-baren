@@ -1,4 +1,4 @@
-import App from '../blackjack_app/App'
+import App from '../App'
 
 type BlackjackPageProps = {
   onBackToOverview: () => void
