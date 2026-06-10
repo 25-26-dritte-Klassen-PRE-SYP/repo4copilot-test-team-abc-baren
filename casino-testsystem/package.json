@@ -5,10 +5,10 @@
   "description": "Root scripts for frontend and backend",
   "scripts": {
     "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
-    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    
-    "dev:backend": "npm run dev --prefix backend",
-    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:all": "concurrently \"node ./scripts/run-with-env.js backend npm run dev\" \"node ./scripts/run-with-env.js frontend npm run dev\"",
+
+    "dev:backend": "node ./scripts/run-with-env.js backend npm run dev",
+    "dev:frontend": "node ./scripts/run-with-env.js frontend npm run dev",
 
     "build:frontend": "npm run build --prefix frontend",
     "start:backend": "npm run start --prefix backend"

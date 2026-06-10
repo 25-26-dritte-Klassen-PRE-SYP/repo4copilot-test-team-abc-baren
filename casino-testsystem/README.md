@@ -100,6 +100,11 @@ Environment Variable:
 
 - `VITE_API_URL` = `https://DEIN-BACKEND.onrender.com`
 
+Nach dem Deploy stellt Render die eigentliche Produktions-URL bereit, zum Beispiel `https://DEIN-FRONTEND.onrender.com`.
+Diese URL ist nicht lokal fest eingebaut, sondern entsteht erst nach dem Deploy des Static Site Services.
+
+Im lokalen Entwicklungsmode bleibt die URL weiterhin `http://localhost:5173`.
+
 ## 6. GitHub CI/CD (Auto-Deploy)
 
 Wenn GitHub Repo mit Render verknuepft ist, deployed Render nach jedem Push automatisch neu.

@@ -1,92 +1,48 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+import { BlackjackPage } from './games/blackjack/pages/BlackjackPage'
+import { GamesOverviewPage } from './pages/GamesOverviewPage'
+import './App.css'
 
-type Item = {
-  id: number;
-  name: string;
-};
+type AppPath = '/games' | '/games/blackjack'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-
-function App() {
-  const [items, setItems] = useState<Item[]>([]);
-  const [name, setName] = useState('');
-  const [editId, setEditId] = useState<number | null>(null);
-
-  async function loadItems() {
-    try {
-      const res = await fetch(`${API_URL}/items`);
-      const data = await res.json();
-      setItems(data);
-    } catch (err) {
-      console.error("Fehler beim Laden der Items:", err);
-    }
-  }
-
-  async function saveItem() {
-    if (!name.trim()) return;
-
-    if (editId === null) {
-      await fetch(`${API_URL}/items`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name }),
-      });
-    } else {
-      await fetch(`${API_URL}/items/${editId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name }),
-      });
-      setEditId(null);
-    }
-
-    setName('');
-    loadItems();
-  }
-
-  async function deleteItem(id: number) {
-    await fetch(`${API_URL}/items/${id}`, {
-      method: 'DELETE',
-    });
-    loadItems();
-  }
-
-  function startEdit(item: Item) {
-    setEditId(item.id);
-    setName(item.name);
-  }
-
-  useEffect(() => {
-    loadItems();
-  }, []);
-
-  return (
-    <div style={{ padding: 30, fontFamily: 'sans-serif' }}>
-      <h1>Items Testsystem</h1>
-
-      <div style={{ marginBottom: 20 }}>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Item Name"
-          style={{ padding: '8px', marginRight: '10px' }}
-        />
-        <button onClick={saveItem} style={{ padding: '8px 12px' }}>
-          {editId === null ? 'Hinzufügen' : 'Speichern'}
-        </button>
-      </div>
-
-      <ul>
-        {items.map((item) => (
-          <li key={item.id} style={{ marginBottom: '10px' }}>
-            <span style={{ marginRight: '15px', fontWeight: 'bold' }}>{item.name}</span>
-            <button onClick={() => startEdit(item)} style={{ marginRight: '5px' }}>Ändern</button>
-            <button onClick={() => deleteItem(item.id)}>Löschen</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+function getCurrentPath(): AppPath {
+  return window.location.pathname === '/games/blackjack' ? '/games/blackjack' : '/games'
 }
 
-export default App;
+function navigate(nextPath: AppPath, replace = false) {
+  if (replace) {
+    window.history.replaceState({}, '', nextPath)
+    return
+  }
+
+  window.history.pushState({}, '', nextPath)
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+function App() {
+  const [path, setPath] = useState<AppPath>(getCurrentPath)
+
+  useEffect(() => {
+    const handleNavigation = () => setPath(getCurrentPath())
+
+    window.addEventListener('popstate', handleNavigation)
+    if (window.location.pathname !== '/games' && window.location.pathname !== '/games/blackjack') {
+      navigate('/games', true)
+      setPath('/games')
+    }
+
+    return () => window.removeEventListener('popstate', handleNavigation)
+  }, [])
+
+  return (
+    <div className="app-shell">
+      {path === '/games' ? (
+        <GamesOverviewPage onPlayBlackjack={() => navigate('/games/blackjack')} />
+      ) : (
+        <BlackjackPage onBackToOverview={() => navigate('/games')} />
+      )}
+    </div>
+  )
+}
+
+export default App
