@@ -14,7 +14,7 @@ export function createApp(options: CreateAppOptions = {}) {
   const blackjackService =
     options.blackjackService ??
     createBlackjackService({
-      repository: createBlackjackRepository(),
+      repository: createBlackjackRepository(pool),
     })
 
   app.use(

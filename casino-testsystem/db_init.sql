@@ -5,8 +5,21 @@ CREATE TABLE IF NOT EXISTS items (
   name TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  username TEXT NOT NULL UNIQUE,
+  current_balance NUMERIC(10, 2) NOT NULL DEFAULT 1000.00,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+INSERT INTO users (username, current_balance)
+VALUES ('guest', 1000.00)
+ON CONFLICT (username) DO NOTHING;
+
 CREATE TABLE IF NOT EXISTS blackjack_games (
   id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL DEFAULT 1 REFERENCES users(id),
   player_name TEXT NOT NULL,
   bet_amount NUMERIC(10, 2) NOT NULL,
   player_cards JSONB NOT NULL DEFAULT '[]'::jsonb,
@@ -16,6 +29,7 @@ CREATE TABLE IF NOT EXISTS blackjack_games (
   dealer_score INTEGER NOT NULL DEFAULT 0,
   game_status TEXT NOT NULL,
   result TEXT,
+  user_balance_after NUMERIC(10, 2),
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
