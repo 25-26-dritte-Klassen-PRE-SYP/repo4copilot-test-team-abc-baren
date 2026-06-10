@@ -19,3 +19,15 @@ CREATE TABLE IF NOT EXISTS blackjack_games (
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+-- Single-row application state table
+CREATE TABLE IF NOT EXISTS app_state (
+  id INTEGER PRIMARY KEY DEFAULT 1,
+  state JSONB NOT NULL DEFAULT '{}'::jsonb,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Ensure a seed row exists (id = 1) to store global app state for clients without login
+INSERT INTO app_state (id, state)
+VALUES (1, '{}'::jsonb)
+ON CONFLICT (id) DO NOTHING;
