@@ -11,14 +11,29 @@ export function createBlackjackRouter(service: BlackjackService) {
         betAmount?: number
       }
 
-      if (!playerName || !betAmount) {
+      const normalizedPlayerName =
+        typeof playerName === 'string' && playerName.trim().length > 0
+          ? playerName.trim()
+          : 'guest'
+      const parsedBetAmount = Number(betAmount)
+
+      if (!parsedBetAmount || parsedBetAmount <= 0) {
         return res.status(400).json({
-          error: 'playerName and betAmount are required',
+          error: 'betAmount is required and must be greater than zero',
         })
       }
 
-      const game = await service.startGame(playerName, betAmount)
+      const game = await service.startGame(normalizedPlayerName, parsedBetAmount)
       res.status(201).json(game)
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  router.get('/profile', async (_req: any, res: any, next: any) => {
+    try {
+      const user = await service.getCurrentUser()
+      res.status(200).json(user)
     } catch (error) {
       next(error)
     }
