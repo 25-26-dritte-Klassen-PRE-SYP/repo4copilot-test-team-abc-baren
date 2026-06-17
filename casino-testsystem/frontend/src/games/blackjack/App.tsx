@@ -4,29 +4,35 @@ import Controls from './components/Controls';
 import Hand from './components/Hand';
 import jsonData from './deck.json';
 
+const GameState = {
+  bet: 0,
+  init: 1,
+  userTurn: 2,
+  dealerTurn: 3,
+} as const
+
+type GameState = typeof GameState[keyof typeof GameState]
+
+const Deal = {
+  user: 0,
+  dealer: 1,
+  hidden: 2,
+} as const
+
+type Deal = typeof Deal[keyof typeof Deal]
+
+const Message = {
+  bet: 'Place a Bet!',
+  hitStand: 'Hit or Stand?',
+  bust: 'Bust!',
+  userWin: 'You Win!',
+  dealerWin: 'Dealer Wins!',
+  tie: 'Tie!',
+} as const
+
+type Message = typeof Message[keyof typeof Message]
+
 const App: React.FC = () => {
-  enum GameState {
-    bet,
-    init,
-    userTurn,
-    dealerTurn
-  }
-
-  enum Deal {
-    user,
-    dealer,
-    hidden
-  }
-
-  enum Message {
-    bet = 'Place a Bet!',
-    hitStand = 'Hit or Stand?',
-    bust = 'Bust!',
-    userWin = 'You Win!',
-    dealerWin = 'Dealer Wins!',
-    tie = 'Tie!'
-  }
-
   const data = JSON.parse(JSON.stringify(jsonData.cards));
   const [deck, setDeck]: any[] = useState(data);
 
@@ -41,8 +47,8 @@ const App: React.FC = () => {
   const [balance, setBalance] = useState(100);
   const [bet, setBet] = useState(0);
 
-  const [gameState, setGameState] = useState(GameState.bet);
-  const [message, setMessage] = useState(Message.bet);
+  const [gameState, setGameState] = useState<GameState>(GameState.bet);
+  const [message, setMessage] = useState<Message>(Message.bet);
   const [buttonState, setButtonState] = useState({
     hitDisabled: false,
     standDisabled: false,

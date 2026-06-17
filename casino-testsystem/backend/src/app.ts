@@ -14,7 +14,7 @@ export function createApp(options: CreateAppOptions = {}) {
   const blackjackService =
     options.blackjackService ??
     createBlackjackService({
-      repository: createBlackjackRepository(),
+      repository: createBlackjackRepository(pool),
     })
 
   app.use(
@@ -59,6 +59,33 @@ export function createApp(options: CreateAppOptions = {}) {
         [name, id],
       )
       res.json(result.rows[0])
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  // Single-entry application state endpoints (no users/logins required)
+  app.get('/state', async (_req: any, res: any, next: any) => {
+    try {
+      const result = await pool.query('SELECT state FROM app_state WHERE id = 1')
+      const state = result.rows[0]?.state ?? {}
+      res.json(state)
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.put('/state', async (req: any, res: any, next: any) => {
+    try {
+      const newState = req.body
+      const result = await pool.query(
+        `INSERT INTO app_state (id, state, updated_at)
+         VALUES (1, $1, NOW())
+         ON CONFLICT (id) DO UPDATE SET state = $1, updated_at = NOW()
+         RETURNING state`,
+        [newState],
+      )
+      res.json(result.rows[0].state)
     } catch (error) {
       next(error)
     }

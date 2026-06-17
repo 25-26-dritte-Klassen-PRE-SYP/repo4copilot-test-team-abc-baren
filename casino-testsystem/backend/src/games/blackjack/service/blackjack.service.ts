@@ -1,4 +1,8 @@
-import type { BlackjackRepository, BlackjackGame } from '../model/blackjack.model.ts'
+import type {
+  BlackjackRepository,
+  BlackjackGame,
+  User,
+} from '../model/blackjack.model.ts'
 
 export interface BlackjackGameView {
   gameId: number
@@ -10,6 +14,7 @@ export interface BlackjackGameView {
   dealerScore: number | null
   status: 'PLAYER_TURN' | 'DEALER_TURN' | 'FINISHED'
   result: 'WIN' | 'LOSE' | 'PUSH' | null
+  userBalanceAfter: number | null
 }
 
 export interface BlackjackService {
@@ -17,6 +22,7 @@ export interface BlackjackService {
   hit(gameId: number): Promise<BlackjackGameView>
   stand(gameId: number): Promise<BlackjackGameView>
   getGame(gameId: number): Promise<BlackjackGameView>
+  getCurrentUser(): Promise<User>
 }
 
 const SUITS = ['♠', '♥', '♦', '♣']
@@ -70,12 +76,38 @@ function gameToView(game: BlackjackGame): BlackjackGameView {
     dealerScore: game.dealerScore,
     status: game.status,
     result: game.result,
+    userBalanceAfter: game.userBalanceAfter,
   }
 }
 
 export function createBlackjackService(options: { repository: BlackjackRepository }): BlackjackService {
   const { repository } = options
   const decks = new Map<number, string[]>()
+
+  async function getDefaultUser(): Promise<User> {
+    const user = await repository.getDefaultUser()
+    if (!user) {
+      throw new Error('Standardbenutzer nicht gefunden')
+    }
+    return user
+  }
+
+  async function settleGame(game: BlackjackGame): Promise<BlackjackGame> {
+    if (game.result === null || game.userBalanceAfter !== null) {
+      return game
+    }
+
+    let delta = 0
+    if (game.result === 'WIN') {
+      delta = game.betAmount
+    } else if (game.result === 'LOSE') {
+      delta = -game.betAmount
+    }
+
+    const newBalance = await repository.adjustUserBalance(game.userId, delta)
+    game.userBalanceAfter = newBalance
+    return game
+  }
 
   function getOrCreateDeck(gameId: number): string[] {
     if (!decks.has(gameId)) {
@@ -95,25 +127,32 @@ export function createBlackjackService(options: { repository: BlackjackRepositor
 
   return {
     async startGame(playerName: string, betAmount: number): Promise<BlackjackGameView> {
-      const game = repository.createGame(playerName, betAmount)
+      const user = await getDefaultUser()
+      if (betAmount <= 0) {
+        throw new Error('Bitte einen gültigen Einsatz angeben')
+      }
+      if (betAmount > user.currentBalance) {
+        throw new Error('Nicht genug Guthaben')
+      }
 
+      const game = await repository.createGame(playerName || user.username, betAmount, user.id)
       game.playerCards = [drawCard(game.id), drawCard(game.id)]
       game.dealerCards = [drawCard(game.id), drawCard(game.id)]
-
       game.playerScore = calculateScore(game.playerCards)
       game.dealerScore = calculateScore(game.dealerCards)
 
       if (game.playerScore === 21) {
         game.status = 'FINISHED'
         game.result = 'WIN'
+        await settleGame(game)
       }
 
-      repository.updateGame(game.id, game)
-      return gameToView(game)
+      const saved = await repository.updateGame(game.id, game)
+      return gameToView(saved ?? game)
     },
 
     async hit(gameId: number): Promise<BlackjackGameView> {
-      const game = repository.getGame(gameId)
+      const game = await repository.getGame(gameId)
       if (!game) throw new Error(`Game ${gameId} not found`)
 
       game.playerCards.push(drawCard(gameId))
@@ -122,14 +161,15 @@ export function createBlackjackService(options: { repository: BlackjackRepositor
       if (game.playerScore > 21) {
         game.status = 'FINISHED'
         game.result = 'LOSE'
+        await settleGame(game)
       }
 
-      repository.updateGame(gameId, game)
-      return gameToView(game)
+      const saved = await repository.updateGame(gameId, game)
+      return gameToView(saved ?? game)
     },
 
     async stand(gameId: number): Promise<BlackjackGameView> {
-      const game = repository.getGame(gameId)
+      const game = await repository.getGame(gameId)
       if (!game) throw new Error(`Game ${gameId} not found`)
 
       game.status = 'DEALER_TURN'
@@ -153,14 +193,19 @@ export function createBlackjackService(options: { repository: BlackjackRepositor
       }
 
       game.status = 'FINISHED'
-      repository.updateGame(gameId, game)
-      return gameToView(game)
+      await settleGame(game)
+      const saved = await repository.updateGame(gameId, game)
+      return gameToView(saved ?? game)
     },
 
     async getGame(gameId: number): Promise<BlackjackGameView> {
-      const game = repository.getGame(gameId)
+      const game = await repository.getGame(gameId)
       if (!game) throw new Error(`Game ${gameId} not found`)
       return gameToView(game)
+    },
+
+    async getCurrentUser(): Promise<User> {
+      return getDefaultUser()
     },
   }
 }
