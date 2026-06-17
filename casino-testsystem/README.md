@@ -1,11 +1,11 @@
-# Casino Testsystem - Lokal + Render
+# Casino Testsystem - Lokal + Vercel
 
 Stack:
 
 - Frontend: React + TypeScript (Vite)
 - Backend: Node.js + Express
-- Datenbank: PostgreSQL (Render)
-- Deployment: Render mit Auto-Deploy ueber GitHub
+- Datenbank: PostgreSQL (extern)
+- Deployment: Vercel mit GitHub Auto-Deploy
 
 ## Projektstruktur
 
@@ -64,7 +64,7 @@ Check:
 
 Die Datei [db_init.sql](db_init.sql) legt das benoetigte Schema an.
 
-In Render bei PostgreSQL (Shell/Console) oder in einem SQL-Tool ausfuehren:
+In einer PostgreSQL-Instanz (Shell/Console) oder in einem SQL-Tool ausfuehren:
 
 ```sql
 \i db_init.sql
@@ -72,38 +72,26 @@ In Render bei PostgreSQL (Shell/Console) oder in einem SQL-Tool ausfuehren:
 
 Falls dein SQL-Tool `\i` nicht unterstuetzt, einfach den Inhalt aus [db_init.sql](db_init.sql) direkt ausfuehren.
 
-## 4. Backend auf Render deployen (Web Service)
+## 4. Deployment auf Vercel
 
-Render Einstellungen:
+Vercel erwartet im Root des Repositories eine `vercel.json`, wenn mehrere Services (Frontend + Backend) vorhanden sind. Dieses Repository ist bereits vorbereitet:
 
-- Root Directory: `backend`
-- Build Command: `npm install`
-- Start Command: `npm start`
+- Frontend: `frontend` (Vite) — wird als Static Site gebaut (Ausgabe: `dist`).
+- Backend: Serverless-API unter `api/*`, die das bestehende Express-App verwendet.
 
-Environment Variables:
+Vercel Einstellungen (GitHub Auto-Deploy):
 
-- `DATABASE_URL` = Internal Database URL von Render PostgreSQL
+- Repository-Root: das Projekt-Repository
+- Build: Vercel führt die Builds entsprechend `vercel.json` aus
+
+Environment Variables (in Vercel Dashboard unter Project → Settings → Environment Variables setzen):
+
+- `DATABASE_URL` = Verbindungsstring zur PostgreSQL-Datenbank
 - `NODE_ENV` = `production`
-- `FRONTEND_URL` = `https://DEIN-FRONTEND.onrender.com`
+- `FRONTEND_URL` = `https://<dein-vercel-frontend>.vercel.app`
+- `VITE_API_URL` = `https://<dein-vercel-project>.vercel.app/api`
 
-Hinweis: Das Backend nutzt in Produktion SSL automatisch ueber `NODE_ENV=production`.
-
-## 5. Frontend auf Render deployen (Static Site)
-
-Render Einstellungen:
-
-- Root Directory: `frontend`
-- Build Command: `npm install && npm run build`
-- Publish Directory: `dist`
-
-Environment Variable:
-
-- `VITE_API_URL` = `https://DEIN-BACKEND.onrender.com`
-
-Nach dem Deploy stellt Render die eigentliche Produktions-URL bereit, zum Beispiel `https://DEIN-FRONTEND.onrender.com`.
-Diese URL ist nicht lokal fest eingebaut, sondern entsteht erst nach dem Deploy des Static Site Services.
-
-Im lokalen Entwicklungsmode bleibt die URL weiterhin `http://localhost:5173`.
+Hinweis: Vercel bietet keine eingebaute Datenbank wie Render; nutze eine externe Postgres-Instanz (z. B. DigitalOcean, Neon, Railway, Supabase) und setze `DATABASE_URL` entsprechend.
 
 ## 6. GitHub CI/CD (Auto-Deploy)
 

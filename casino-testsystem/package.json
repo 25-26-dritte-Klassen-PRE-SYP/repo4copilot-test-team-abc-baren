@@ -11,7 +11,11 @@
     "dev:frontend": "node ./scripts/run-with-env.js frontend npm run dev",
 
     "build:frontend": "npm run build --prefix frontend",
-    "start:backend": "npm run start --prefix backend"
+    "start:backend": "npm run start --prefix backend",
+    "vercel-build": "npm run build:frontend"
+  },
+  "dependencies": {
+    "serverless-http": "^3.0.0"
   },
   "devDependencies": {
     "concurrently": "^8.0.0"
