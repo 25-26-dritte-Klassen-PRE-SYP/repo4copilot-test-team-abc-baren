@@ -3,6 +3,8 @@ import Status from './components/Status';
 import Controls from './components/Controls';
 import Hand from './components/Hand';
 import jsonData from './deck.json';
+import profileData from './profile.json';
+import styles from './App.module.css';
 
 const GameState = {
   bet: 0,
@@ -44,7 +46,9 @@ const App: React.FC = () => {
   const [dealerScore, setDealerScore] = useState(0);
   const [dealerCount, setDealerCount] = useState(0);
 
-  const [balance, setBalance] = useState(100);
+  const STORAGE_KEY = 'blackjackUserBalance';
+  const [username] = useState(profileData.username ?? 'Max');
+  const [balance, setBalance] = useState(profileData.balance ?? 100);
   const [bet, setBet] = useState(0);
 
   const [gameState, setGameState] = useState<GameState>(GameState.bet);
@@ -54,6 +58,30 @@ const App: React.FC = () => {
     standDisabled: false,
     resetDisabled: true
   });
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const storedBalance = window.localStorage.getItem(STORAGE_KEY);
+    if (!storedBalance) {
+      return;
+    }
+
+    const parsedBalance = Number(storedBalance);
+    if (!Number.isNaN(parsedBalance)) {
+      setBalance(parsedBalance);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.localStorage.setItem(STORAGE_KEY, String(balance));
+  }, [balance]);
 
   useEffect(() => {
     if (gameState === GameState.init) {
@@ -266,20 +294,39 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
-      <Status message={message} balance={balance} />
-      <Controls
-        balance={balance}
-        gameState={gameState}
-        buttonState={buttonState}
-        betEvent={placeBet}
-        hitEvent={hit}
-        standEvent={stand}
-        resetEvent={resetGame}
-      />
-      <Hand title={`Dealer's Hand (${dealerScore})`} cards={dealerCards} />
-      <Hand title={`Your Hand (${userScore})`} cards={userCards} />
-    </>
+    <div className={styles.gameScreen}>
+      <div className={styles.statusControlsRow}>
+        <Status
+          message={message}
+          balance={balance}
+          username={username}
+        />
+        <Controls
+          balance={balance}
+          gameState={gameState}
+          buttonState={buttonState}
+          betEvent={placeBet}
+          hitEvent={hit}
+          standEvent={stand}
+          resetEvent={resetGame}
+        />
+      </div>
+      <div className={styles.tableShell}>
+        <div className={styles.tableSurface}>
+          <div className={styles.tableTop}>
+            <span className={styles.tableLabel}>Blackjack Table</span>
+          </div>
+          <div className={styles.dealerArea}>
+            <span className={styles.areaLabel}>Dealer</span>
+            <Hand title={`Dealer (${dealerScore})`} cards={dealerCards} />
+          </div>
+          <div className={styles.playerArea}>
+            <span className={styles.areaLabel}>You</span>
+            <Hand title={`Player (${userScore})`} cards={userCards} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

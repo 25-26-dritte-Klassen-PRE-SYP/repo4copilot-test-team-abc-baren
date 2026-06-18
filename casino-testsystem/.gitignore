@@ -26,3 +26,6 @@ Thumbs.db
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# Local game profile data
+frontend/src/games/blackjack/profile.json
